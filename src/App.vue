@@ -1,32 +1,33 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="center examplex">
+      <vs-navbar
+        color="rgba"
+        text-white
+        square
+        center-collapsed
+        v-model="active"
+        ref="navbar"
+      >
+        <vs-navbar-item :active="active == 'guide'" id="guide" to="/">
+          Home
+        </vs-navbar-item>
+        <vs-navbar-item :active="active == 'docs'" id="docs" to="about">
+          About
+        </vs-navbar-item>
+        <template #right>
+          <vs-button color="#fff" flat>Login</vs-button>
+        </template>
+      </vs-navbar>
     </div>
     <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+export default {
+  data: () => ({
+    active: 'guide'
+  })
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+</script>

@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <FullPage>
+      <h1>Hello World</h1>
+    </FullPage>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import FullPage from '@/components/FullPage.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    FullPage
   }
 }
 </script>
+
+<style>
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+</style>
